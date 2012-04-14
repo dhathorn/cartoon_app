@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block body %}
+	<p><strong>Debriefing</strong>
+  You have finished the task, thank you for your participation.
+	<!---
+	sandbox mturk
+		<form action="http://workersandbox.mturk.com/mturk/externalSubmit" method="POST">
+		-->
+		<form action="https://www.mturk.com/mturk/externalSubmit" method="POST">
+		<input type="hidden" id="assignmentId" name="assignmentId" value="{{session['assignmentId']}}">
+		<input type="hidden" id="hitId" name="hitId" value="{{session['hitId']}}">
+		<input type=submit value="Return to mechanical turk and claim your reward" name="Submit">
+	</form>
+{% endblock %}
+

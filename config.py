@@ -1,0 +1,9 @@
+import os
+# configuration
+DEBUG = True
+SECRET_KEY = 'DEBUG'
+#SQLALCHEMY_DATABASE_URI = 'sqlite:////tmp/delay.db'
+SQLALCHEMY_DATABASE_URI = os.environ['SHARED_DATABASE_URL']
+CSRF_ENABLED = True
+RECAPTCHA_PUBLIC_KEY=""
+RECAPTCHA_PRIVATE_KEY=""

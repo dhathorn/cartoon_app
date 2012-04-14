@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h2> Rate this image</h2>
+  <img src="{{ url_for('static', filename=picture) }}">
+  <form action="{{ url_for('experiment') }}" method=POST>
+    {{form.hidden_tag()}}
+    <tr>
+      <td>Very Much Like a Photograph</td>
+    {% for field in form.choice %}
+        <td> {{field}} </td>
+        <td> {{field.label}} </td>
+    {% endfor %}
+      <td>Very Much Like a Cartoon</td>
+    {% if form.choice.errors %}
+      <ul class="errors">
+      {% for error in form.choice.errors %}<li>{{ error }}{% endfor %}
+      </ul>
+    {% endif %}
+    </td>
+      <dd><input type=submit value=Next></dd>
+  </form>
+    <div id="progressbar">Progress: {{"%.2f"|format(percent)}}%
+      <div style="width:{{percent}}%"> </div>
+    </div>
+{% endblock %}

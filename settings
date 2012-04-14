@@ -1,0 +1,4 @@
+#!/bin/sh
+export SHARED_DATABASE_URL='sqlite:////tmp/delay.db'
+export DELAY_SETTINGS=../config.py
+export PORT=5000

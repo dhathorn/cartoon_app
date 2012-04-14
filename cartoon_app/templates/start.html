@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block body %}
+	{% from "_formhelpers.html" import render_field %}
+  <div id="inner">
+    <form action="{{url_for('start')}}" method=POST>
+      {{form.hidden_tag()}}
+      {{ render_field(form.recaptcha) }}
+    <dd><input type=submit value=Continue>
+    </form>
+  </div>
+{% endblock %}
+
